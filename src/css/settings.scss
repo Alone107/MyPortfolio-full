@@ -99,7 +99,7 @@
       }
 
       & p {
-        font-size: 14px;
+        font-size: var(--text);
         line-height: 17.08px;
         color: $gray;
         font-family: $ice;
@@ -109,7 +109,7 @@
       & span {
         display: inline;
         font-family: $ice;
-        font-size: 14px;
+        font-size: var(--text);
         font-weight: 400;
         text-align: left;
         color: var(--white);
@@ -148,7 +148,7 @@
       color: #000000;
       font-family: $big;
       font-weight: $big-fw;
-      font-size: 18px;
+      font-size: var(--title);
       line-height: 21.55px;
       letter-spacing: 0.075em;
       text-align: center;
@@ -164,7 +164,7 @@
       color: var(--color);
       font-family: $big;
       font-weight: $big-fw;
-      font-size: 18px;
+      font-size: var(--title);
       line-height: 21.55px;
       letter-spacing: 0.075em;
       text-align: center;
@@ -178,7 +178,7 @@
 
   .settings-item-color--span span {
     font-family: $ice;
-    font-size: 14px;
+    font-size: var(--text);
     font-weight: 400;
     line-height: 17.08px;
     color: $gray;

@@ -15,7 +15,7 @@
     & button {
       width: 100%;
       font-family: $big;
-      font-size: 18px;
+      font-size: var(--title);
       font-weight: $big-fw;
       letter-spacing: 0.075em;
       text-align: left;

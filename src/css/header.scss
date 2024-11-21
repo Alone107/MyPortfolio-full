@@ -62,7 +62,7 @@
       }
     }
     & p {
-      font-size: 14px;
+      font-size: var(--text);
       line-height: 13.58px;
       color: $gray;
     }

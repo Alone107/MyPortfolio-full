@@ -3,6 +3,9 @@ import './hire.js';
 import './credits.js';
 import './menu.js';
 import './settings.js';
+import './progress-circle.js';
+import './filter-achivments.js';
+import './challengeForm.js';
 
 let currentDate = new Date();
 let coins = 1425;

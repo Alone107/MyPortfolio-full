@@ -39,11 +39,24 @@ buttonsSettingEsc.addEventListener('click', () => {
   spanOrderChange.innerHTML = spanOrderDefault;
 
   colorTextChangeTwo.value = defaultValueRangeTwo;
-  console.log(colorDefaulTextTwo);
-  document.body.style.color = `rgb(${colorDefaulTextTwo})`;
+  // document.body.style.color = `rgb(${colorDefaulTextTwo})`;
   spanColorChangeTwo.innerHTML = spanColorDefaultTwo;
   spanOrderChangeTwo.innerHTML = spanOrderDefaultTwo;
+
+  document.documentElement.style.setProperty(
+    '--white',
+    `rgb(${colorDefaulTextTwo})`,
+  );
+
+  textChange(textDefaultTitle);
+  textChangeSmall(textDefaultSmall);
+  fader3.value = defaultValueText;
+
+  largest.innerHTML = `Largest: ${TitleText}px`;
+  smallest.innerHTML = `Smallest: ${smallerText}px`;
 });
+
+// ------------------Write---------------------
 
 buttonsSettingWrite.addEventListener('click', () => {
   SettingsClose();
@@ -61,6 +74,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       spanColorDefaultTwo = 'red';
       spanOrderDefaultTwo = 0;
       defaultValueRangeTwo = 0;
+
       break;
     }
     case '10': {
@@ -75,6 +89,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       spanColorDefaultTwo = 'purple';
       spanOrderDefaultTwo = 1;
       defaultValueRangeTwo = 10;
+
       break;
     }
     case '20': {
@@ -89,6 +104,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       spanColorDefaultTwo = 'cian';
       spanOrderDefaultTwo = 2;
       defaultValueRangeTwo = 20;
+
       break;
     }
     case '30': {
@@ -103,6 +119,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       spanColorDefaultTwo = 'green';
       spanOrderDefaultTwo = 3;
       defaultValueRangeTwo = 30;
+
       break;
     }
     case '40': {
@@ -117,6 +134,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       spanColorDefaultTwo = 'yellow';
       spanOrderDefaultTwo = 4;
       defaultValueRangeTwo = 40;
+
       break;
     }
     case '50': {
@@ -131,6 +149,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       spanColorDefaultTwo = 'white';
       spanOrderDefaultTwo = 5;
       defaultValueRangeTwo = 50;
+
       break;
     }
     case '60': {
@@ -140,6 +159,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       defaultValueRange = 60;
       spanColorDefault = 'pink';
       spanOrderDefault = 6;
+
       break;
     }
     case '70': {
@@ -149,6 +169,7 @@ buttonsSettingWrite.addEventListener('click', () => {
       defaultValueRange = 70;
       spanColorDefault = 'orange';
       spanOrderDefault = 7;
+
       break;
     }
     case '80': {
@@ -158,6 +179,105 @@ buttonsSettingWrite.addEventListener('click', () => {
       defaultValueRange = 80;
       spanColorDefault = 'white';
       spanOrderDefault = 8;
+
+      break;
+    }
+  }
+
+  switch (fader3.value) {
+    case '0': {
+      textDefaultSmall = 0;
+      textDefaultTitle = 0;
+      textChange(0);
+      textChangeSmall(0);
+      menuMargin(-26);
+      defaultValueText = fader3.value;
+      TitleText = 14;
+      smallerText = 10;
+      break;
+    }
+    case '10': {
+      textDefaultSmall = 1;
+      textDefaultTitle = 1;
+      textChange(1);
+      textChangeSmall(1);
+      menuMargin(-26);
+      defaultValueText = fader3.value;
+      TitleText = 15;
+      smallerText = 11;
+      break;
+    }
+    case '20': {
+      textDefaultSmall = 2;
+      textDefaultTitle = 2;
+      textChange(2);
+      textChangeSmall(2);
+      menuMargin(-26);
+      defaultValueText = fader3.value;
+      TitleText = 16;
+      smallerText = 12;
+      break;
+    }
+    case '30': {
+      textDefaultSmall = 3;
+      textDefaultTitle = 3;
+      textChange(3);
+      textChangeSmall(3);
+      menuMargin(-26);
+      defaultValueText = fader3.value;
+      TitleText = 17;
+      smallerText = 13;
+      break;
+    }
+    case '40': {
+      textDefaultSmall = 4;
+      textDefaultTitle = 4;
+      textChange(4);
+      textChangeSmall(4);
+      menuMargin(-26);
+      defaultValueText = fader3.value;
+      TitleText = 18;
+      smallerText = 14;
+      break;
+    }
+    case '50': {
+      textDefaultSmall = 4;
+      textDefaultTitle = 5;
+      textChange(5);
+      menuMargin(-26);
+      defaultValueText = fader3.value;
+      TitleText = 19;
+      smallerText = 14;
+      break;
+    }
+    case '60': {
+      textDefaultSmall = 4;
+      textDefaultTitle = 6;
+      textChange(6);
+      menuMargin(-26);
+      defaultValueText = fader3.value;
+      TitleText = 20;
+      smallerText = 14;
+      break;
+    }
+    case '70': {
+      textDefaultSmall = 4;
+      textDefaultTitle = 7;
+      textChange(7);
+      menuMargin(0);
+      defaultValueText = fader3.value;
+      TitleText = 21;
+      smallerText = 14;
+      break;
+    }
+    case '80': {
+      textDefaultSmall = 4;
+      textDefaultTitle = 8;
+      textChange(8);
+      menuMargin(0);
+      defaultValueText = fader3.value;
+      TitleText = 22;
+      smallerText = 14;
       break;
     }
   }
@@ -325,3 +445,100 @@ colorTextChangeTwo.addEventListener('input', () => {
     }
   }
 });
+
+// ---------------------Settings-text----------------------------
+
+let fader3 = document.getElementById('fader3');
+const menu = document.querySelector('.menu');
+const largest = document.querySelector('.largest');
+const smallest = document.querySelector('.smallest');
+let textDefaultTitle = 4;
+let textDefaultSmall = 4;
+let defaultValueText = 40;
+let smallerText = 14;
+let TitleText = 18;
+
+fader3.addEventListener('input', () => {
+  switch (fader3.value) {
+    case '0': {
+      textChange(0);
+      textChangeSmall(0);
+      menuMargin(-26);
+      largest.innerHTML = 'Largest: 14px';
+      smallest.innerHTML = 'Smallest: 10px';
+      break;
+    }
+    case '10': {
+      textChange(1);
+      textChangeSmall(1);
+      menuMargin(-26);
+      largest.innerHTML = 'Largest: 15px';
+      smallest.innerHTML = 'Smallest: 11px';
+
+      break;
+    }
+    case '20': {
+      textChange(2);
+      textChangeSmall(2);
+      menuMargin(-26);
+      largest.innerHTML = 'Largest: 16px';
+      smallest.innerHTML = 'Smallest: 12px';
+      break;
+    }
+    case '30': {
+      textChange(3);
+      textChangeSmall(3);
+      menuMargin(-26);
+      largest.innerHTML = 'Largest: 17px';
+      smallest.innerHTML = 'Smallest: 13px';
+      break;
+    }
+    case '40': {
+      textChange(4);
+      textChangeSmall(4);
+      menuMargin(-26);
+      largest.innerHTML = 'Largest: 18px';
+      smallest.innerHTML = 'Smallest: 14px';
+      break;
+    }
+    case '50': {
+      textChange(5);
+      menuMargin(-26);
+      largest.innerHTML = 'Largest: 19px';
+      smallest.innerHTML = 'Smallest: 14px';
+      break;
+    }
+    case '60': {
+      textChange(6);
+      menuMargin(-26);
+      largest.innerHTML = 'Largest: 20px';
+      smallest.innerHTML = 'Smallest: 14px';
+      break;
+    }
+    case '70': {
+      textChange(7);
+      menuMargin(0);
+      largest.innerHTML = 'Largest: 21px';
+      smallest.innerHTML = 'Smallest: 14px';
+      break;
+    }
+    case '80': {
+      textChange(8);
+      menuMargin(0);
+      largest.innerHTML = 'Largest: 22px';
+      smallest.innerHTML = 'Smallest: 14px';
+    }
+  }
+});
+
+function textChange(text) {
+  document.documentElement.style.setProperty('--title', `${text + 14}px`);
+}
+
+function textChangeSmall(text) {
+  document.documentElement.style.setProperty('--text', `${text + 10}px`);
+}
+
+function menuMargin(margin) {
+  return (menu.style.marginTop = `${margin}px`);
+}
